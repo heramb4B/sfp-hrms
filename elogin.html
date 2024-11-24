@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log In | HRMS | SFP</title>
+	<link rel="stylesheet" type="text/css" href="stylelogin.css">
+	<style>
+		
+
+.clock {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    border: 3px solid #333;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<h1>Sankalp Food Products</h1>
+			<ul id="navli">
+				<li><a class="homeblack" href="index.html">Home</a></li>
+				
+				<li><a class="homered" href="elogin.html">Employee Login</a></li>
+				<li><a class="homeblack" href="alogin.html">Admin Login</a></li>
+				
+			</ul>
+		</nav>
+	</header>
+	<div class="divider"></div>
+
+	<div class="loginbox">
+    <img src="assets/lock.jpg" class="avatar">
+	<div class="clock">
+        <div id="time"></div>
+    </div>
+   
+        <h1>Login</h1>
+        <form action="process/eprocess.php" method="POST">
+            <p>Email</p>
+            <input type="text" name="mailuid" placeholder="Enter Email Address" required="required">
+            <p>Password</p>
+            <input type="password" name="pwd" placeholder="Enter Password" required="required">
+            <input type="submit" name="login-submit" value="Login">
+           
+        </form>
+        
+    </div>
+			
+			
+</body>
+<script>
+	function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    const timeString = `${hours}:${minutes}:${seconds}`;
+    document.getElementById('time').textContent = timeString;
+}
+
+// Update the clock every second
+setInterval(updateClock, 1000);
+
+// Initial call to display the clock immediately
+updateClock();
+
+</script>
+</html>
